@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Malla Curricular - Ingeniería Ambiental</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+  <!-- Pantalla de acceso -->
+  <section id="pantalla-acceso" class="acceso">
+    <div class="acceso-caja">
+      <div class="acceso-avatar" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <g stroke="rgba(255,255,255,.75)" stroke-width="1.6">
+            <line x1="32" y1="12" x2="14" y2="32"/><line x1="32" y1="12" x2="50" y2="32"/>
+            <line x1="32" y1="12" x2="32" y2="52"/><line x1="14" y1="32" x2="50" y2="32"/>
+            <line x1="14" y1="32" x2="32" y2="52"/><line x1="50" y1="32" x2="32" y2="52"/>
+          </g>
+          <circle cx="32" cy="12" r="5.5" fill="#7fe8dc"/><circle cx="14" cy="32" r="5.5" fill="#e2a4f2"/>
+          <circle cx="50" cy="32" r="5.5" fill="#f6e49a"/><circle cx="32" cy="52" r="5.5" fill="#9ff0a8"/>
+        </svg>
+      </div>
+      <div class="marca">Malla Curricular</div>
+      <h1>Ingeniería Ambiental</h1>
+      <p class="sub">Universidad de Córdoba</p>
+
+      <div class="pestanas">
+        <button type="button" class="pestana activa" data-form="form-entrar">Ya tengo cuenta</button>
+        <button type="button" class="pestana" data-form="form-registro">Soy nuevo</button>
+      </div>
+
+      <form id="form-entrar" class="formulario">
+        <label>Tu cédula
+          <input name="cedula" inputmode="numeric" autocomplete="username" placeholder="Ej: 1000000001" required>
+        </label>
+        <label>Contraseña
+          <input name="clave" type="password" autocomplete="current-password" required>
+        </label>
+        <button class="btn primario grande" type="submit">Entrar</button>
+      </form>
+
+      <form id="form-registro" class="formulario oculto">
+        <label>Tu cédula
+          <input name="cedula" inputmode="numeric" required>
+        </label>
+        <div class="fila-doble">
+          <label>Nombre
+            <input name="nombre" autocomplete="given-name" required>
+          </label>
+          <label>Apellido
+            <input name="apellido" autocomplete="family-name" required>
+          </label>
+        </div>
+        <label>Contraseña <small>(mínimo 6 caracteres)</small>
+          <input name="clave" type="password" autocomplete="new-password" required>
+        </label>
+        <button class="btn primario grande" type="submit">Crear mi cuenta</button>
+        <p class="nota-pequena">Al crear tu cuenta te inscribimos en las materias de primer semestre para que empieces de una.</p>
+      </form>
+
+      <p id="acceso-error" class="error-caja oculto"></p>
+    </div>
+  </section>
+
+  <!-- Aplicación -->
+  <div id="pantalla-app" class="oculto">
+    <header class="barra">
+      <div class="barra-titulo">Mi malla</div>
+      <nav id="menu" class="menu"></nav>
+      <div class="barra-usuario">
+        <span id="usuario-nombre" class="usuario-nombre"></span>
+        <button id="btn-salir" class="btn chico suave" type="button">Salir</button>
+      </div>
+    </header>
+    <main id="contenido" class="contenido"></main>
+  </div>
+
+  <div id="modal" class="modal oculto">
+    <div id="modal-caja" class="modal-caja" role="dialog" aria-modal="true"></div>
+  </div>
+  <div id="avisos" class="avisos" aria-live="polite"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
